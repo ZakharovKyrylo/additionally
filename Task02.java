@@ -1,7 +1,6 @@
 package additionally;
 
 import java.io.*;
-import additionally.Task01.*;
 import java.util.Random;
 
 public class Task02 {
@@ -10,13 +9,14 @@ public class Task02 {
         Write write=new Write();
 
 
-//        write.writeNum();
+        write.writeNum();
 
         System.out.println(sort.select());
     }
 }
 
 
+//zapis
 class Write{
     void writeNum() throws Exception{
         Random random = new Random();
@@ -34,6 +34,8 @@ class Write{
 
 class Sort{
     String select()  throws Exception {
+
+// schitivanie
         String string = Reader.reader("text1.txt");
         int[] mas = new int[string.length()/2];
 
@@ -43,7 +45,7 @@ class Sort{
             mas[i]=Integer.parseInt(string.substring(0, t));
             string = string.substring(t+1);
         }
-
+//sortirovka
         for(int i=1;i<mas.length;i++){
             if(mas[i-1] > mas[i]){
                 t=mas[i-1];
