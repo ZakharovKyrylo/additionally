@@ -1,17 +1,18 @@
 package additionally;
 
-import Lection.LTask;
+
 
 import java.io.*;
 
-public class Task01 extends LTask{
+public class Task01{
 
     public static void main(String[] args) throws Exception{
+        Upper upper = new Upper();
 
-        Reader reader = new Reader();
         String file = Reader.reader("text.txt");
+        String out = upper.upeerString(file);
 
-        System.out.println(file);
+        System.out.println(out);
 
 
 
@@ -23,10 +24,6 @@ class Reader {
 
         FileReader fileReader = new FileReader(fileName);
         String string = new String();
-        String chengString=new String();
-        String upperString = new String();
-
-        int lengthWord;
 
 
         // perevod faila v stroky
@@ -44,9 +41,19 @@ class Reader {
         string=string.replace('\n',',');
         string=string.replaceAll(",,", ",");
 
+        return string;
 
+    }
+}
+
+class Upper{
+    String upeerString(String string){
+        String chengString=new String();
+        String upperString = new String();
+        int lengthWord;
         while ( string.length() > 0){
             lengthWord = string.indexOf(',');
+
             if(lengthWord>2){
                 upperString = string.substring(0, lengthWord);
                 upperString = upperString.toUpperCase();
@@ -60,6 +67,5 @@ class Reader {
             string = string.substring(lengthWord+1);
         }
         return chengString;
-//        return string;
     }
 }
