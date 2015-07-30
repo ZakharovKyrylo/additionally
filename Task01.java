@@ -36,6 +36,7 @@ class Reader {
         // razdelenie slov zapatimi
         string=string.trim();
         string=string.concat(",");
+        string=string.replace('\u0000', ',');
         string=string.replace(' ', ',');
         string=string.replace('\r',',');
         string=string.replace('\n',',');
