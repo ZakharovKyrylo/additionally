@@ -1,5 +1,5 @@
-package additionally;
-
+package org.sourceit.zakharov.additionally;
+//
 import java.io.*;
 import java.util.Random;
 
@@ -9,19 +9,19 @@ public class Task02 {
         Write write=new Write();
 
 
-        write.writeNum();
+        write.writeNum("text1.txt");
 
-        System.out.println(sort.select());
+        System.out.println(sort.select("text1.txt"));
     }
 }
 
 
-//zapis
+
 class Write{
-    void writeNum() throws Exception{
+    void writeNum(String file) throws Exception{
         Random random = new Random();
 
-        FileOutputStream stream = new FileOutputStream(new File("text1.txt"));
+        FileOutputStream stream = new FileOutputStream(new File(file));
 
         DataOutputStream dataOutputStream = new DataOutputStream(stream);  //   1
 
@@ -31,12 +31,11 @@ class Write{
 }
 
 
-
 class Sort{
-    String select()  throws Exception {
+    String select(String file)  throws Exception {
 
 // schitivanie
-        String string = Reader.reader("text1.txt");
+        String string = Reader.reader(file);
         int[] mas = new int[string.length()/2];
 
         int t;

@@ -1,6 +1,4 @@
-package additionally;
-
-
+package org.sourceit.zakharov.additionally;
 
 import java.io.*;
 
@@ -13,7 +11,6 @@ public class Task01{
         String out = upper.upeerString(file);
 
         System.out.println(out);
-
 
 
     }
