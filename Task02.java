@@ -1,5 +1,5 @@
 package org.sourceit.zakharov.additionally;
-//
+
 import java.io.*;
 import java.util.Random;
 
