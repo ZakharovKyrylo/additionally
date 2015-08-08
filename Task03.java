@@ -80,17 +80,19 @@ class Find{
     void findInt(){
         int[] mas = new int[file.length()/2];
         int t;
-        for(int i = 0,y=0; file.length()>0;i++){
+        int num=0;
+        for(int y=0; file.length()>0;){
             t = file.indexOf(',');
             try {
                 mas[y]=Integer.parseInt(file.substring(0, t));
+                num++;
                 y++;
             }
             catch (Exception e){}
 
             file = file.substring(t+1);
         }
-        for(int i = 0; mas[i]!=0 ;i++){
+        for(int i = 0; i<num ;i++){
             System.out.println(mas[i]);
         }
     }
@@ -100,18 +102,23 @@ class Find{
     void findDouble(){
         double[] mas = new double[file.length()/2];
         int t;
-        for(int i = 0,y=0; file.length()>0;i++){
+        int num =0;
+        for(int y=0; file.length()>0;){//for each
             t = file.indexOf(',');
             try {
                 mas[y]=Double.parseDouble(file.substring(0, t));
-                if ((mas[y]%1)==0)  y--;
+                if ((mas[y]%1)==0)  {
+                    y--;
+                    num--;
+                }
                 y++;
+                num++;
             }
             catch (Exception e){}
 
             file = file.substring(t+1);
         }
-        for(int i = 0; mas[i]!=0 ;i++){
+        for(int i = 0; i<num ;i++){
             System.out.println(mas[i]);
         }
     }
